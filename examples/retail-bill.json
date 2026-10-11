@@ -1,0 +1,11 @@
+{
+  "posId": 822922,
+  "usin": "POS-0001",
+  "dateTime": "2026-10-08 11:00:00",
+  "paymentMode": "cash",
+  "buyer": { "name": "Walk-in customer" },
+  "items": [
+    { "code": "SKU-001", "name": "Cotton T-shirt", "pctCode": "6109.1000", "quantity": 1, "unitPrice": 1000, "taxRate": 18 },
+    { "code": "SKU-002", "name": "Cotton T-shirt (promo)", "pctCode": "6109.1000", "quantity": 1, "unitPrice": 600, "discount": 100, "taxRate": 18 }
+  ]
+}

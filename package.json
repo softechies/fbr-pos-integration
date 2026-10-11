@@ -1,0 +1,65 @@
+{
+  "name": "fbr-pos-integration",
+  "version": "0.1.0",
+  "description": "FBR POS (IMS) integration for Node.js and TypeScript: build Tier-1 / income tax POS invoices with correct totals, post them to FBR cloud or the local Fiscal Component, and handle every response safely.",
+  "keywords": [
+    "fbr",
+    "pakistan",
+    "pos",
+    "ims",
+    "fiscal",
+    "e-invoicing",
+    "tax",
+    "tier-1",
+    "invoice",
+    "pral"
+  ],
+  "license": "MIT",
+  "author": "Softechies Solutions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softechies/fbr-pos-integration.git"
+  },
+  "homepage": "https://github.com/softechies/fbr-pos-integration#readme",
+  "bugs": {
+    "url": "https://github.com/softechies/fbr-pos-integration/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean && tsup src/cli.ts --format esm",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "bin": {
+    "fbr-pos": "./dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
